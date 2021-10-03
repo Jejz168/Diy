@@ -120,13 +120,14 @@ async function myInfo(){
     try{
         const result = JSON.parse(data)
         if(logs)$.log(data)
-
           if(result.code == 0){
+          console.log(`【账户昵称】` + result.data.nameNick) 
+          console.log(`【账户信用】` + result.data.credit)
          $.goldNow = result.data.goldNow
-         console.log(`\n余额：`+result.data.goldNow)
+         console.log(`【账户余额】`+result.data.goldNow)
          num = $.goldNow/4000*0.35
 
-             $.log("可提金额："+num.toFixed(1))
+             $.log("【可提金额】："+num.toFixed(1))
             if($.goldNow>=4000){
             $.log("\n=====开始提现=====")
              txnum = $.goldNow/4000*0.35
@@ -220,14 +221,19 @@ async function task(){
 	    if (taskId !== null){
              await $.wait(21000)
             await completeTask(js)
-	    }else{
-	    console.log('获取任务失败，请1小时后再尝试')
-	    }
-
+          }
+          if (taskId == null && result.data.bizCode == 30) {
+            console.log('获取任务失败，下批文章将在24小时后到来')
+          }
+          if (taskId == null && result.data.bizCode == 11) {
+            console.log('获取任务失败，当天达到上限')
+          }
+          if (taskId == null && result.data.bizCode == 10) {
+            console.log('获取任务失败，下批文章将在60分钟后到达')
         }
-} else {
+       } else {
        console.log(`\n数据获取失败或者  今日阅读次数已满 请明天再来`)
-}
+       }
           
         }catch(e) {
           $.logErr(e, response);
