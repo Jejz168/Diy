@@ -122,11 +122,13 @@ async function myInfo(){
         if(logs)$.log(data)
 
           if(result.code == 0){
+          console.log(`【账户昵称】：` + result.data.nameNick) 
+          console.log(`【账户信用】：` + result.data.credit)
          $.goldNow = result.data.goldNow
-         console.log(`\n余额：`+result.data.goldNow)
+         console.log(`【账户余额】：`+result.data.goldNow)
          num = $.goldNow/4000*0.35
 
-             $.log("可提金额："+num.toFixed(1))
+             $.log("【可提金额】："+num.toFixed(1))
             if($.goldNow>=4000){
             $.log("\n=====开始提现=====")
              txnum = $.goldNow/4000*0.35
