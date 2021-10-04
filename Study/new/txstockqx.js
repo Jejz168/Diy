@@ -8,7 +8,7 @@ const tgmarkcode = "/submitactivitycodes txstock@"
 const githubkeyUrl = 'https://raw.githubusercontent.com/hushenan/Diy/master/Study/new/txstock.js'
 
 let rndtime = Math.round(new Date().getTime()) //毫秒
-let signday = formatDateTime(new Date());
+let signday = new Date().toLocaleString('zu-ZA').slice(0,10).replace(/-/g,'');
 
 let tz = '';
 let cash = $.getval('cash') || 0; //0为不自动提现,1为自动提现1元,5为自动提现1元
