@@ -266,7 +266,7 @@ if($request&&$request.url.indexOf("get_read_bonus")>=0) {
   //const article = readurlVal.replace(/\d{3}$/,Math.floor(Math.random()*1000));
 //article = article.replace(/\d{3}$/, (Math.random()*1e3).toFixed(0).padStart(3,"0"));
 
-    //if(article) $.setdata(article,
+    if(article) $.setdata(article,
 'article')
     if (readurlVal) $.setdata(readurlVal,
 `readurl${$.idx}`)
