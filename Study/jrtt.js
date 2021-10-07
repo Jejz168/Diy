@@ -246,8 +246,8 @@ $.log(jrttfarmKey)
     $.log(`[${$.jsname + $.idx}] 获取farm请求: 成功,jrttfarmKey: ${farmkey}`)
     $.msg(`获取farmkey: 成功🎉`, ``)
 }
-  if($request&&$request.url.indexOf("ack_time")>=0) {
-  const signurlVal = $request.url.split(`caid1=`)[1]
+  if($request&&$request.url.indexOf("sign_in")>=0) {
+  const signurlVal = $request.url.split(`?`)[1]
     if (signurlVal) $.setdata(signurlVal,
 `signurl${$.idx}`)
     $.log(`[${$.jsname + $.idx}] 获取sign请求: 成功,signurlVal: ${signurl}`)
@@ -266,7 +266,7 @@ if($request&&$request.url.indexOf("get_read_bonus")>=0) {
   //const article = readurlVal.replace(/\d{3}$/,Math.floor(Math.random()*1000));
 //article = article.replace(/\d{3}$/, (Math.random()*1e3).toFixed(0).padStart(3,"0"));
 
-    if(article) $.setdata(article,
+    //if(article) $.setdata(article,
 'article')
     if (readurlVal) $.setdata(readurlVal,
 `readurl${$.idx}`)
