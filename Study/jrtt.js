@@ -273,8 +273,8 @@ if($request&&$request.url.indexOf("get_read_bonus")>=0) {
     $.msg(`获取readurl: 成功🎉`, ``)
    const jrttreadKey = JSON.stringify($request.headers)
 $.log(jrttreadKey)
-  if(jrttreadKey)        $.setdata(jrttreadKey,`readkey${$.idx}`)
-    $.log(`[${jsname}] 获取read请求: 成功,jrttreadKey: ${readkey}`)
+  if(jrttreadKey) $.setdata(jrttreadKey,`readkey${$.idx}`)
+    $.log(`[${jsname + $.idx}] 获取read请求: 成功,jrttreadKey: ${readkey}`)
     $.msg(`获取readkey: 成功🎉`, ``)
     }
   }
