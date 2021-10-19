@@ -204,10 +204,13 @@ async function task(){
         if(completeTodayCount >= 25){
             await taskSeq(1)
         }
-	    if(completeTodayCount >= 70){
+	    if(completeTodayCount >= 50){
             await taskSeq(2)
-            $.log("\n今日阅读${completeTodayCount}`篇已满 请明天再来")
-
+         }
+        if(completeTodayCount >= 70){
+            $.log("\n今日阅读70篇已满 请明天再来")
+           //$.log("\n=====开始提现=====")
+        return
         }else {
 		const CryptoJS = require('./crypto-js')
           var key = CryptoJS.enc.Utf8.parse("5kosc7jy2w0fxx3s")
