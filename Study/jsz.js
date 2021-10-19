@@ -126,12 +126,12 @@ async function myInfo(){
           console.log(`【账户信用】：` + result.data.credit)
          $.goldNow = result.data.goldNow
          console.log(`【账户余额】：`+result.data.goldNow)
-         num = $.goldNow/4000*0.35
+         num = $.goldNow/4000*0.4
 
              $.log("【可提金额】："+num.toFixed(1))
-            if($.goldNow>=4000){
+          /*  if($.goldNow>=4000){
             $.log("\n=====开始提现=====")
-             txnum = $.goldNow/4000*0.35
+             txnum = $.goldNow/4000*0.4
              txnum = txnum.toFixed(1)
                 const CryptoJS = require('./crypto-js')
           var key = CryptoJS.enc.Utf8.parse("5kosc7jy2w0fxx3s")
@@ -139,11 +139,11 @@ async function myInfo(){
             var js = CryptoJS.AES.encrypt(plaintText, key, {
             mode: CryptoJS.mode.ECB,
             padding: CryptoJS.pad.Pkcs7
-    })
+          })
              await $.wait(15000)
              await tx(js)
-            }
-} else {
+            }*/
+      } else {
               console.log(`\n数据获取失败`)
           }
         }catch(e) {
@@ -263,10 +263,10 @@ token = tk.token
         headers: {
 "Content-Type": "application/json;charset=UTF-8",
 "Host": "apponlie.sahaj.cn",
-"Origin": "http://uuhhbb.zhuwentao52.top",
-"Referer": "http://uuhhbb.zhuwentao52.top",
+"Origin": "http://jjuuii.sahaj.cn",
+"Referer": "http://jjuuii.sahaj.cn/",
 "token": token,
-"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.8(0x18000825) NetType/4G Language/zh_CN"},
+"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.15(0x18000f27) NetType/WIFI Language/zh_CN"},
         body: `${body}`,
     }
    $.post(plant6_url,async(error, response, data) =>{
@@ -298,11 +298,11 @@ token = tk.token
         headers: {
 "Content-Type": "application/json;charset=UTF-8",
 "Host": "apponlie.sahaj.cn",
-"Origin": "http://uuhhbb.zhuwentao52.top",
-"Referer": "http://uuhhbb.zhuwentao52.top",
+"Origin": "http://jjuuii.sahaj.cn",
+"Referer": "http://jjuuii.sahaj.cn/",
 
 "token": token,
-"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.8(0x18000825) NetType/4G Language/zh_CN"},
+"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.15(0x18000f27) NetType/WIFI Language/zh_CN"},
         body: `${body}`,
         
     }
