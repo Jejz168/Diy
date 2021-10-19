@@ -47,7 +47,7 @@ var timestamp = (new Date()).valueOf();
       if(!$.isNode()){
           jszhdArr.push($.getdata('jszhd'))
           let jszcount = ($.getval('jszcount') || '1');
-          for (let i = 0; i <= jszcount; i++) {
+          for (let i = 2; i <= jszcount; i++) {
             jszhdArr.push($.getdata(`jszhd${i}`))
             }
     console.log(`------------- 共${jszhdArr.length}个账号-------------\n`)
@@ -129,7 +129,7 @@ async function myInfo(){
          num = $.goldNow/4000*0.4
 
              $.log("【可提金额】："+num.toFixed(1))
-          /*  if($.goldNow>=4000){
+            if($.goldNow>=4000){
             $.log("\n=====开始提现=====")
              txnum = $.goldNow/4000*0.4
              txnum = txnum.toFixed(1)
@@ -140,9 +140,9 @@ async function myInfo(){
             mode: CryptoJS.mode.ECB,
             padding: CryptoJS.pad.Pkcs7
           })
-             await $.wait(15000)
+             await $.wait(16000)
              await tx(js)
-            }*/
+            }
       } else {
               console.log(`\n数据获取失败`)
           }
@@ -204,13 +204,10 @@ async function task(){
         if(completeTodayCount >= 25){
             await taskSeq(1)
         }
-	    if(completeTodayCount >= 50){
+	    if(completeTodayCount >= 70){
             await taskSeq(2)
-        }
-        if(completeTodayCount >= 70){
-            $.log("今日阅读70篇已满 请明天再来")
-           //$.log("\n=====开始提现=====")
-        return
+            $.log("\n今日阅读${completeTodayCount}`篇已满 请明天再来")
+
         }else {
 		const CryptoJS = require('./crypto-js')
           var key = CryptoJS.enc.Utf8.parse("5kosc7jy2w0fxx3s")
@@ -223,7 +220,7 @@ async function task(){
              await $.wait(21000)
             await completeTask(js)
 	    }else{
-	    console.log('获取任务失败，请1小时后再尝试')
+	    console.log('\n获取任务失败，请1小时后再尝试')
 	    }
 
         }
